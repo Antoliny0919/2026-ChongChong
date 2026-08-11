@@ -2,11 +2,11 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
     paths:
       - "frontend/**"
   pull_request:
-    branches: [main]
+    branches: [main, dev]
     paths:
       - "frontend/**"
 
@@ -61,22 +61,21 @@ jobs:
       - name: Typecheck
         run: pnpm run type-check
 
-  # Uncomment this once the test configuration has been added.
-  # test:
-  #   runs-on: ubuntu-latest
-  #   defaults:
-  #     run:
-  #       working-directory: frontend
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v7
-  #     - name: Set up Node
-  #       uses: actions/setup-node@v7
-  #       with:
-  #         node-version-file: frontend/.nvmrc
-  #         cache: "pnpm"
-  #         cache-dependency-path: frontend/pnpm-lock.yaml
-  #     - name: Install Dependency
-  #       run: pnpm install
-  #     - name: Test
-  #       run: some test command...
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: frontend/.nvmrc
+          cache: "pnpm"
+          cache-dependency-path: frontend/pnpm-lock.yaml
+      - name: Install Dependency
+        run: pnpm install
+      - name: Test
+        run: pnpm run test
