@@ -11,6 +11,6 @@
     "noEmit": true,
     "types": ["jest"]
   },
-  "include": ["./**/*.ts", "./**/*.tsx", "main.tsx"],
+  "include": ["./**/*.ts", "./**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }
