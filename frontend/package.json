@@ -34,6 +34,11 @@
       "/node_modules/.pnpm/(?!(rettime|until-async|outvariant|strict-event-emitter|headers-polyfill|is-node-process|@open-draft\\+[^@]+|@bundled-es-modules\\+[^@]+|@mswjs\\+[^@]+)@)"
     ]
   },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  },
   "type": "module",
   "devDependencies": {
     "@babel/core": "^8.0.1",
@@ -74,10 +79,5 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router": "^8.3.0"
-  },
-  "msw": {
-    "workerDirectory": [
-      "public"
-    ]
   }
 }
