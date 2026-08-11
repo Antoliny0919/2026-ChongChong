@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "jsxImportSource": "@emotion/react",
     "noEmit": true,
-    "types": ["jest"]
+    "types": ["jest", "node"]
   },
   "include": ["./**/*.ts", "./**/*.tsx"],
   "exclude": ["node_modules", "dist"]

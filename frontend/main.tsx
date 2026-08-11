@@ -16,4 +16,15 @@ const router = createBrowserRouter([
 
 const root = document.getElementById('root')!;
 
-ReactDOM.createRoot(root).render(<RouterProvider router={router} />);
+async function enableMocking() {
+  // 개발 환경에서는 MSW를 실행합니다.
+  if (process.env.NODE_ENV !== 'development') return;
+
+  const { worker } = await import('./src/mocks/msw-browser');
+
+  return worker.start();
+}
+
+enableMocking().then(() => {
+  ReactDOM.createRoot(root).render(<RouterProvider router={router} />);
+});
