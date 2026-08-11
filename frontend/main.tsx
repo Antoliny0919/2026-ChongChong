@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
-import App from './App';
-import Antoliny from './Antoliny';
+import App from './src/App';
+import Antoliny from './src/Antoliny';
 
 const router = createBrowserRouter([
   {
